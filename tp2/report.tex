@@ -18,7 +18,7 @@
 
 \begin{abstract}
 During this lab, we will develop a Python application with support of the library OpenCV to identify skin in Images. Throughout the execution of multiple tests with different lighting and color schemes, we observe the nunaces of each different color spaces, and how different lighting conditions can affect the outcome.
- \end{abstract}
+\end{abstract}
 
 \section{Introduction}
 As it happens with every digital representation of the real world in the digital domain, images do not have an one to one equivalence in our computers. By definition, images are continuous signals, and such things don't have a direct representation in our binary structures.
@@ -78,18 +78,70 @@ In order to ajust the parameters, we altered by hand the values of the parameter
 \label{tab:images}
 \end{table}
 
-\section{Resuts}
+\section{Results}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{cc}
+    \includegraphics[width=0.3\linewidth]{images/results/hand1_skin_hsv.jpg} & \includegraphics[width=0.3\linewidth]{images/results/hand1_skin_ycc.jpg} \\
+\end{tabular}
+\caption{Image 1 results (HSV and YCbCr).}
+\label{tab:imagens}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{cc}
+    \includegraphics[width=0.3\linewidth]{images/results/hand2_skin_hsv.jpg} & \includegraphics[width=0.3\linewidth]{images/results/hand2_skin_ycc.jpg} \\
+\end{tabular}
+\caption{Image 2 results (HSV and YCbCr).}
+\label{tab:images2}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{cc}
+    \includegraphics[width=0.3\linewidth]{images/results/hand3_skin_hsv.jpg} & \includegraphics[width=0.3\linewidth]{images/results/hand3_skin_ycc.jpg} \\
+\end{tabular}
+\caption{Image 3 results (HSV and YCbCr).}
+\label{tab:images3}
+\end{table}
+
+\subsection{Precision}
+
+The precision of our results was measured by comparing the results of our program with the ground truth images. We used the following formula to calculate the precision:
+
+\begin{equation}
+    Precision = \frac{TP}{TP + FP}
+\end{equation}
+
+Where TP is the number of true positives, and FP is the number of false positives.
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Image} & \textbf{HSV Precision} & \textbf{YCbCr Precision} \\
+        \hline
+        1 & 90.7\% & 96\% \\
+        \hline
+        2 & 19.9\% & 100\% \\
+        \hline
+        3 & 93.7\% & 97.6\% \\
+        \hline
+    \end{tabular}
+    \caption{Precision values for the three images in HSV and YCbCr color spaces.}
+    \label{tab:precision}
+\end{table}
 
 \section{Conclusion}
+ 
+This lab was crucial for the understanding of how lighting and color spaces can impact the efficacy of a segmentation.
+The results between Image 1 and Image 2 bring about the best visualiation of how crucial lighting is for a photo, when changing the color spaces from HSV to YCbCr the results improved largely, yet for Image 2 the results were still somewhat underwhelming.
+The background also plays a big role on the outcome of our program, in some cases the color of the wall, mixed with a certain lighting, were had to segment out.
 
-\subsection{Image 1}
-\subsection{Image 2}
-\subsection{Image 3}
-
-\section{Conclusion}
-how ingh othe way li o oght affecture, the impact lighh when using different color spaces 
-This lab was crucial for the understanding of cces and the way li o ohow light can impact the efficacy of a program.The results between Image 1 and Image 2 bring about the best visualiationf 
-
+In retorospect, when taking all of these factors into account, each use case is unique, therefore we need to fine tune the program and its parameters, like the mask range and color scheme,  for maximum efficiency.
+Our results were satisfying but more tests can be conducted with better backgrounds and different lighting colors and intensities to further test the efficacy of our program.
 
 % References
 \bibliographystyle{IEEEtran}
