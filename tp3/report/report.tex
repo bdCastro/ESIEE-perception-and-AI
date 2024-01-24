@@ -1,0 +1,51 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx} % Required for inserting images
+
+\title{TP3 Report \\ Perception and AI}
+\author{\IEEEauthorblockN{Bruno Luiz Dias Alves de Castro}
+\IEEEauthorblockA{\textit{ESIEE Paris}}
+\and
+\IEEEauthorblockN{Victor Gabriel Mendes Sündermann}
+\IEEEauthorblockA{\textit{ESIEE Paris}}
+}
+\date{January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Autonomous vehicles are one of the most studied and research topics in Computer Science, Computer Vision and AI. It is a complex problem by nature, and the amount of (literal and figurative) moving parts in this problems attract scientist and developers from all areas.
+
+One of the most important features from an autonomous vehicle, is its ability to recognize people in from of it, and act accordingly. This recognition is no easy task though: the sensors and is locations, the environment, the algorithms and AI behind it, all play critical roles that impact significantly the final result. And being such a sensible feature from such vehicles, a good pedestrian recognition may be what gets a vehicle approved in certain markets, or assure their failure.
+
+Naturally, developing a good network to recognize pedestrians in different scenarios, and using different sensors is extremely important, and that is why we were tasked with such task.
+
+\subsection{Objectives}
+
+The objectives from this practical work are simple and straight forward: develop a network capable of properly recognizing pedestrian in a video footage, using two types of data: a regular video stream, and an infrared footage.
+
+The network developed must be deployed and tested in two circumstances: with and without GPU, and with such evaluate the possibility of deploying out network in a real world scenario.
+
+\section{Data preparation}
+
+The first in our development, was preparing the data we had for training. For this, we were provided with frames from a real video footage captured in a car. Our task was to select a few of these frames that contain pedestrians in them, and highlight them, using a rectangle. There are multiple ways this task could have been done, but we chose a software called \textit{\textbf{Roboflow}}.
+
+\subsection{Roboflow}
+
+\textit{\textbf{Roboflow}} is a web framework focused on data preparation and dataset development. It provides us with all the tools needed for classifying and prepossess our images. It also provides us easy methods of deployment, such as an API, to better import our datasets into our projects without the need to juggle files around.
+
+The dataset prepared with \textit{\textbf{Robolow}} was imported into a \textit{\textbf{Python Notebook}}, and the project development followed, using \textit{\textbf{Google Colab}}.
+
+\section{Development}
+
+Among all the tecnologies used during this project, a few can be highlighted:
+
+\begin{itemize}
+    \item \textit{\textbf{Ultralytics}}: a library that helps us retrieving data such as performance and specifications from our CPU.
+    \item \textit{\textbf{YOLO}}: a model from \textit{\textbf{Ultralytics}}, trained in our project.
+\end{itemize}
+
+
+\end{document}
